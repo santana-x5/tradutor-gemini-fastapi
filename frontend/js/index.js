@@ -1,5 +1,5 @@
 // ── Configuração ──
-const API_BASE = "hhttps://tradutor-gemini-fastapi.onrender.com";
+const API_BASE = "https://tradutor-gemini-fastapi.onrender.com";
 
 const LANGUAGES = [
   { code: "en",    label: "Inglês" },
