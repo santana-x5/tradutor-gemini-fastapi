@@ -41,14 +41,11 @@ API de tradução de textos construída com Python e FastAPI, que utiliza uma LL
 ## 📁 Estrutura de Pastas
 
 ```
-tradutor-llm/
+tradutor-gemini-fastapi/
 ├── frontend/
-│   ├── css/
-│   │   └── style.css
-│   ├── html/
-│   │   └── index.html
-│   └── js/
-│       └── index.js
+│   ├── index.html
+│   ├── style.css
+│   └── index.js
 ├── src/
 │   ├── models/
 │   ├── services/
@@ -181,20 +178,25 @@ Retorna a lista de idiomas suportados.
 
 ## 📌 Status do Projeto
 
-<!-- Atualize conforme o progresso -->
 - [x] Definição de escopo
 - [x] Integração com LLM
 - [x] Endpoints implementados
 - [x] Frontend básico
-- [ ] Deploy
+- [x] Deploy
 
 ---
+
+# 🔗 Links do Projeto
+Deploy Frontend: [Link_vercel](tradutor-gemini-fastapi.vercel.app)
+
+API Endpoint:[Link_render](https://tradutor-gemini-fastapi.onrender.com)
+
+Documentação Swagger (API):[Link_API](https://tradutor-gemini-fastapi.onrender.com/docs)
 
 ## 👤 Autor
 
 **Klinger felix xavier santana**  
-link do github: https://github.com/santana-x5
-
+Linkedlin: [Link_linkedin](https://www.linkedin.com/in/klinger-felix-xavier-santana-83a3112a6/)
 ---
 
 ## 📄 Licença
