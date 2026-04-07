@@ -33,27 +33,32 @@ API de tradução de textos construída com Python e FastAPI, que utiliza uma LL
 | Tradução | Gemini 2.5 flash |
 | Cache | Dicionário em memória (Python) |
 | Frontend | HTML + CSS + JavaScript puro |
-| Deploy backend | <!-- Plataforma escolhida: ex: Railway, Render, Fly.io --> |
-| Deploy frontend | <!-- Plataforma escolhida: ex: Vercel, Netlify, GitHub Pages --> |
+| Deploy backend |  Render |
+| Deploy frontend | Vercel |
 
 ---
 
 ## 📁 Estrutura de Pastas
 
 ```
-<!-- Preencher após criar a estrutura do projeto. Exemplo:
-
 tradutor-llm/
-├── backend/
-│   ├── main.py
-│   ├── routes/
-│   ├── services/
-│   └── models/
 ├── frontend/
-│   └── index.html
+│   ├── css/
+│   │   └── style.css
+│   ├── html/
+│   │   └── index.html
+│   └── js/
+│       └── index.js
+├── src/
+│   ├── models/
+│   ├── services/
+│   └── main.py
+├── venv/
+├── .env
 ├── .env.example
-├── requirements.txt
-└── README.md
+├── .gitignore
+├── README.md
+└── requirements.txt
 -->
 ```
 
@@ -159,7 +164,9 @@ Retorna a lista de idiomas suportados.
 | `en` | Inglês |
 | `pt-br` | Português (Brasil) |
 | `es` | Espanhol |
-| <!-- adicionar conforme implementar --> | <!-- --> |
+| `de` | alemão |
+| `fr` | francês |
+| `it` | italiano |
 
 ---
 
@@ -177,21 +184,19 @@ Retorna a lista de idiomas suportados.
 <!-- Atualize conforme o progresso -->
 - [x] Definição de escopo
 - [x] Integração com LLM
-- [ ] Endpoints implementados
-- [ ] Frontend básico
+- [x] Endpoints implementados
+- [x] Frontend básico
 - [ ] Deploy
 
 ---
 
 ## 👤 Autor
 
-**<!-- Seu nome -->**  
-<!-- Link do LinkedIn, se quiser -->  
-<!-- Link do portfólio, se quiser -->
+**Klinger felix xavier santana**  
+link do github: https://github.com/santana-x5
 
 ---
 
 ## 📄 Licença
 
-<!-- Escolha uma licença. Para projetos pessoais/portfólio, MIT é a mais comum. -->
-<!-- Exemplo: Este projeto está sob a licença MIT. Veja o arquivo LICENSE para detalhes. -->
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.

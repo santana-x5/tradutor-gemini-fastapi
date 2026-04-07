@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tradutor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+<div class="app">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Tradu<span>tor</span></div>
+    <button class="theme-btn" id="themeBtn" title="Alternar tema" aria-label="Alternar tema">
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="container">
+
+      <!-- Alerts -->
+      <div class="alert alert-warn" id="alertWarn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span id="alertWarnText"></span>
+      </div>
+
+      <div class="alert alert-error" id="alertError">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span id="alertErrorText"></span>
+      </div>
+
+      <!-- Panels -->
+      <div class="panels-wrapper">
+
+        <!-- Painel Origem -->
+        <div class="panel" id="panelSource">
+          <div class="panel-header">
+            <select class="lang-select" id="sourceLang" aria-label="Idioma de origem">
+              <option value="auto">Detectar idioma</option>
+            </select>
+          </div>
+          <div class="panel-body">
+            <textarea id="sourceText" placeholder="Digite o texto para traduzir..." maxlength="2000" aria-label="Texto de origem"></textarea>
+          </div>
+          <div class="panel-footer">
+            <span class="char-count" id="charCount">0 / 2000</span>
+            <div class="panel-actions">
+              <button class="icon-btn" id="clearBtn" title="Limpar" aria-label="Limpar texto" style="display:none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botão Inverter -->
+        <div class="middle-col">
+          <button class="swap-btn" id="swapBtn" title="Inverter idiomas" aria-label="Inverter idiomas" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+          </button>
+        </div>
+
+        <!-- Painel Destino -->
+        <div class="panel" id="panelTarget">
+          <div class="panel-header">
+            <select class="lang-select" id="targetLang" aria-label="Idioma de destino"></select>
+          </div>
+          <div class="panel-body">
+            <textarea id="targetText" readonly placeholder="A tradução aparecerá aqui..." aria-label="Texto traduzido"></textarea>
+          </div>
+          <div class="panel-footer">
+            <span></span>
+            <div class="panel-actions">
+              <button class="icon-btn" id="copyBtn" title="Copiar tradução" aria-label="Copiar tradução" style="display:none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Botão Traduzir -->
+      <div class="translate-row">
+        <button class="translate-btn" id="translateBtn" aria-label="Traduzir texto">
+          <div class="spinner"></div>
+          <span class="btn-text">Traduzir</span>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>Tradutor LLM — React + Tailwind CSS + shadcn/ui</footer>
+</div>
+
+<script src="../js/index.js"></script>
+</body>
+</html>
